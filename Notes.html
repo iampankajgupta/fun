@@ -1,0 +1,18 @@
+<?php
+	$host = "localhost";
+	$dbusername = "root";
+	$dbpassword = "";
+	$dbname = "notes";
+	$conn = mysqli_connect($host,$dbusername,$dbpassword,$dbname);
+	$username = $_POST['username']; 
+	$email = $_POST['email'];
+	$password = $_POST['password']; 
+	if ($conn){
+		$something = mysqli_query($conn,"INSERT INTO users(username,email,password) values ('$username','$email','$password')");
+		if (!$something) {
+			echo mysqli_error($something);
+		}
+		else{
+			
+		}
+?>
